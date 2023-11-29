@@ -1,4 +1,5 @@
-class Pessoa:
+from ABC import ABC, abstractmethod
+class Pessoa(ABC):
     def __init__(self, nome_oficial, cpf, endereco, telefone):
         self.nome_oficial = nome_oficial
         self.idade = idade
@@ -6,21 +7,25 @@ class Pessoa:
         self.endereco = endereco
         self.telefone = telefone
 
-    def getNome_oficial(self):
+    @property
+    def nome_oficial(self):
         return self.nome
 
-    def getIdade(self):
+    @nome_oficial.setter
+    def nome_oficial(self, nome):
+        self.nome_oficial = nome
+
+    @property
+    def idade(self):
         return self.idade
-
-    def setNome(self, nome):
-        self.nome = nome
-
-    def setIdade(self, idade):
+    @idade.setter
+    def idade(self, idade):
         self.idade = idade
-
+    
     def __str__(self):
-        return f"Nome: {self.nome}\nIdade: {self.idade}\nCPF: {self.cpf}\nEndereco: {self.endereco}\nTelefone: {self.telefone}\n"
-
+        return f"Nome: {self.nome}\n Idade: {self.idade}\n CPF: {self.cpf}\n Endereco: {self.endereco}\n Telefone: {self.telefone}\n"
+    
+    @abstractmethod
     def verificarTipo(self):
-        return "Pessoa"
+        pass
     
