@@ -7,7 +7,7 @@ class Pessoa(ABC):
         self.endereco = endereco
         self.telefone = telefone
 
-    @property
+    @nome_oficial.getter
     def nome_oficial(self):
         return self.nome
 
@@ -15,14 +15,14 @@ class Pessoa(ABC):
     def nome_oficial(self, nome):
         self.nome_oficial = nome
 
-    @property
+    @idade.geter
     def idade(self):
         return self.idade
     @idade.setter
     def idade(self, idade):
         self.idade = idade
     
-    def __str__(self):
+    def exibirDados(self):
         return f"Nome: {self.nome}\n Idade: {self.idade}\n CPF: {self.cpf}\n Endereco: {self.endereco}\n Telefone: {self.telefone}\n"
     
     @abstractmethod
