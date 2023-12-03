@@ -1,6 +1,6 @@
 class PessoaJuridica(Pessoa):
-    def __init__(self,nome_oficial, cpf, endereco, telefone, nome_fantasia, num_funcionarios):
-        super().__init__(nome_oficial, cpf, endereco, telefone)
+    def __init__(self,nome_oficial, cpf_cnpj, endereco, telefone, nome_fantasia, num_funcionarios):
+        super().__init__(nome_oficial, cpf_cnpj, endereco, telefone)
         self.nome_fantasia = nome_fantasia
         self.num_funcionarios = num_funcionarios
     
