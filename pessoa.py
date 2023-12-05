@@ -1,29 +1,21 @@
-from ABC import ABC, abstractmethod
+from abc import ABC, abstractmethod
 class Pessoa(ABC):
-    def __init__(self, nome_oficial, cpf, endereco, telefone):
-        self.nome_oficial = nome_oficial
-        self.idade = idade
-        self.cpf = cpf
-        self.endereco = endereco
-        self.telefone = telefone
+    def __init__(self, nome_oficial, cpf_cnpj, endereco, telefone):
+        self._nome_oficial = nome_oficial
+        self._cpf_cnpj = cpf_cnpj
+        self._endereco = endereco
+        self._telefone = telefone
 
-    @nome_oficial.getter
+    @property
     def nome_oficial(self):
-        return self.nome
+        return self._nome_oficial
 
     @nome_oficial.setter
-    def nome_oficial(self, nome):
-        self.nome_oficial = nome
-
-    @idade.geter
-    def idade(self):
-        return self.idade
-    @idade.setter
-    def idade(self, idade):
-        self.idade = idade
+    def nome_oficial(self, nome_oficial):
+        self._nome_oficial = nome_oficial
     
     def exibirDados(self):
-        return f"Nome: {self.nome}\n Idade: {self.idade}\n CPF: {self.cpf}\n Endereco: {self.endereco}\n Telefone: {self.telefone}\n"
+        return f"Nome Oficial: {self._nome_oficial}\nCPF: {self._cpf_cnpj}\nEndereco: {self._endereco.exibirDados()}\nTelefone: {self._telefone}\n"
     
     @abstractmethod
     def verificarTipo(self):
