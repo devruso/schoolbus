@@ -1,3 +1,4 @@
+from pessoaJuridica import PessoaJuridica
 class Escola(PessoaJuridica):
     def __init__(self,nome_oficial,cpf_cnpj,endereco,telefone,nome_fantasia, num_funcionarios,alunos):
         super().__init__(nome_oficial,cpf_cnpj,endereco,telefone,nome_fantasia,num_funcionarios)
