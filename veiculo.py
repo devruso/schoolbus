@@ -1,22 +1,22 @@
 class Veiculo:
     def __init__(self, placa, ano, modelo, capacidade, isAlugado, contrato):
-        self.placa = placa
-        self.ano = ano
-        self.modelo = modelo
-        self.capacidade = capacidade
-        self.isAlugado = isAlugado
-        self.contrato = contrato
+        self._placa = placa
+        self._ano = ano
+        self._modelo = modelo
+        self._capacidade = capacidade
+        self._isAlugado = isAlugado
+        self._contrato = contrato
     
-    @isAlugado.getter
+    @property
     def isAlugado(self):
-        return self.isAlugado
+        return self._isAlugado
     @isAlugado.setter
     def isAlugado(self, isAlugado):
-        self.isAlugado = isAlugado
+        self._isAlugado = isAlugado
     
-    @contrato.getter
+    @property
     def contrato(self):
-        return self.contrato
+        return self._contrato
     @contrato.setter
     def contrato(self, contrato):
-        self.contrato = contrato
+        self._contrato = contrato
