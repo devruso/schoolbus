@@ -1,33 +1,33 @@
 class Endereco:
     def __init__(self, rua, numero, bairro, complemento):
-        self.rua = rua
-        self.numero = numero
-        self.bairro = bairro
-        self.complemento = complemento
+        self._rua = rua
+        self._numero = numero
+        self._bairro = bairro
+        self._complemento = complemento
 
     def getRua(self):
-        return self.rua
+        return self._rua
 
     def getNumero(self):
-        return self.numero
+        return self._numero
 
     def getBairro(self):
-        return self.bairro
+        return self._bairro
 
     def getComplemento(self):
-        return self.complemento
+        return self._complemento
 
     def setRua(self, rua):
-        self.rua = rua
+        self._rua = rua
 
     def setNumero(self, numero):
-        self.numero = numero
+        self._numero = numero
 
     def setBairro(self, bairro):
-        self.bairro = bairro
+        self._bairro = bairro
 
     def setComplemento(self, complemento):
-        self.complemento = complemento
+        self._complemento = complemento
     
-    def __str__(self):
-        return f"Rua: {self.rua}\nNumero: {self.numero}\nBairro: {self.bairro}\nComplemento: {self.complemento}\n"
+    def exibirDados(self):
+        return f"\nRua: {self._rua}\nNumero: {self._numero}\nBairro: {self._bairro}\nComplemento: {self._complemento}\n"
