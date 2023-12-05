@@ -1,50 +1,51 @@
+from pessoa import Pessoa
 class PessoaFisica(Pessoa):
-    def __init__(self, nome_oficial, cpf, endereco, telefone,nome,mae,pai,naturalidade,data_nascimento):
-        super().__init__(nome_oficial, cpf, endereco, telefone)
-        self.nome = nome
-        self.mae = mae
-        self.pai = pai
-        self.naturalidade = naturalidade
-        self.data_nascimento = data_nascimento
+    def __init__(self, nome_oficial, cpf_cnpj, endereco, telefone,nome,mae,pai,naturalidade,data_nascimento):
+        super().__init__(nome_oficial, cpf_cnpj, endereco, telefone)
+        self._nome = nome
+        self._mae = mae
+        self._pai = pai
+        self._naturalidade = naturalidade
+        self._data_nascimento = data_nascimento
 
     def exibirDados(self):
-        return super().exibirDados() + f"Nome: {self.nome}\n Mãe: {self.mae}\n Pai: {self.pai}\n Naturalidade: {self.naturalidade}\n Data de Nascimento: {self.data_nascimento}\n"
+        return super().exibirDados() + f"Nome Social: {self._nome}\nMãe: {self._mae}\nPai: {self._pai}\nNaturalidade: {self._naturalidade}\nData de Nascimento: {self._data_nascimento}\n"
 
     def verificarTipo(self):
         return "Pessoa Física"
     
-    @nome.getter
+    @property
     def nome(self):
-        return self.nome
+        return self._nome
     @nome.setter
     def nome(self, nome):
-        self.nome = nome
+        self._nome = nome
 
-    @mae.getter
+    @property
     def mae(self):
-        return self.mae
+        return self._mae
     @mae.setter
     def mae(self, mae):
-        self.mae = mae
+        self._mae = mae
 
 
-    @pai.getter
+    @property
     def pai(self):
-        return self.pai
+        return self._pai
     @pai.setter
     def pai(self, pai):
-        self.pai = pai
+        self._pai = pai
 
-    @naturalidade.getter
+    @property
     def naturalidade(self):
-        return self.naturalidade
+        return self._naturalidade
     @naturalidade.setter
     def naturalidade(self, naturalidade):
-        self.naturalidade = naturalidade
+        self._naturalidade = naturalidade
 
-    @data_nascimento.getter
+    @property
     def data_nascimento(self):
-        return self.data_nascimento
+        return self._data_nascimento
     @data_nascimento.setter
     def data_nascimento(self, data_nascimento):
-        self.data_nascimento = data_nascimento
+        self._data_nascimento = data_nascimento
