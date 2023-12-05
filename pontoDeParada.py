@@ -1,20 +1,25 @@
 class PontoDeParada:
-    totalDeParadas = 0
-    def __init__(self,nome,latitude,longitude, alunos = [], totalDeParadas = 0):
-        self.nome = nome
-        self.latitude = latitude
-        self.longitude = longitude
-        self.alunos = alunos if alunos is not None else []
-        PontoDeParada.totalDeParadas += 1
+    _totalDeParadas = 0
+
+    def __init__(self,nome,latitude,longitude):
+        self._nome = nome
+        self._latitude = latitude
+        self._longitude = longitude
+        self._alunos = []
+        PontoDeParada._totalDeParadas += 1
 
     def adicionarAluno(self, aluno):
-        self.alunos.append(aluno)
+        self._alunos.append(aluno)
     
-    @totalDeParadas.getter
-    def totalDeParadas(self):
-        return PontoDeParada.totalDeParadas
+    @property
+    def get_totalDeParadas(self):
+        return PontoDeParada._totalDeParadas
 
-    def apresentarDados(self):
-        return f"Nome: {self.nome}\n Latitude: {self.latitude}\n Longitude: {self.longitude}\n Alunos: {self.alunos}\n Total de Paradas: {self.totalDeParadas}\n"
+    def lerAlunos(self):
+        for aluno in self._alunos:
+            print(aluno.exibirDados())
+
+    def exibirDados(self):
+        return f"Nome: {self._nome}\nLatitude: {self._latitude}\nLongitude: {self._longitude}\nAlunos: {self._alunos}\nTotal de Paradas: {PontoDeParada._totalDeParadas}\n"
 
     
