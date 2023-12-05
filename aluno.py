@@ -1,42 +1,44 @@
+from pessoaFisica import PessoaFisica
 class Aluno(PessoaFisica):
-    def __init__(self, nome_oficial, cpf, endereco, telefone,nome,mae,pai,naturalidade,data_nascimento,escola,matricula,turno,pontoDeParada):
-        super().__init__(nome_oficial, cpf, endereco, telefone,nome,mae,pai,naturalidade,data_nascimento)
-        self.escola = escola
-        self.matricula = matricula
-        self.turno = turno
-        self.pontoDeParada = pontoDeParada
+    def __init__(self, nome_oficial, cpf_cnpj, endereco, telefone, nome, mae, pai, naturalidade, data_nascimento, escola, matricula, turno, serie, pontoDeParada):
+        super().__init__(nome_oficial, cpf_cnpj, endereco, telefone, nome, mae, pai, naturalidade, data_nascimento)
+        self._escola = escola
+        self._matricula = matricula
+        self._turno = turno
+        self._serie = serie
+        self._pontoDeParada = pontoDeParada
     
     
     def exibirDados(self):
-        return super().exibirDados() + f"Escola: {self.escola}\n Matrícula: {self.matricula}\n Turno: {self.turno}\n Ponto de Parada: {self.pontoDeParada}\n"
+        return super().exibirDados() + f"Escola: {self._escola.exibirDados()}\nMatrícula: {self._matricula}\nTurno: {self._turno}\nSerie: {self._serie} \nPonto de Parada: {self._pontoDeParada.exibirDados()}\n"
 
     def verificarTipo(self):
         return "Aluno"
     
-    @escola.getter
+    @property
     def escola(self):
-        return self.escola
+        return self._escola
     @escola.setter
     def escola(self, escola):
-        self.escola = escola
+        self._escola = escola
     
-    @matricula.getter
+    @property
     def matricula(self):
-        return self.matricula
+        return self._matricula
     @matricula.setter
     def matricula(self, matricula):
-        self.matricula = matricula
+        self._matricula = matricula
 
-    @turno.getter
+    @property
     def turno(self):
-        return self.turno
+        return self._turno
     @turno.setter
     def turno(self, turno):
-        self.turno = turno
+        self._turno = turno
     
-    @pontoDeParada.getter
+    @property
     def pontoDeParada(self):
-        return self.pontoDeParada
+        return self._pontoDeParada
     @pontoDeParada.setter
     def pontoDeParada(self, pontoDeParada):
-        self.pontoDeParada = pontoDeParada
+        self._pontoDeParada = pontoDeParada
