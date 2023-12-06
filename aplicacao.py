@@ -18,7 +18,7 @@ class Menu:
         self.opcao = 0
 
     def exibir_menu(self):
-        print("1 - Cadastrar Endereco")
+        print("\n1 - Cadastrar Endereco")
         print("2 - Cadastrar Escola")
         print("3 - Cadastrar Ponto de Parada")
         print("4 - Cadastrar Aluno")
@@ -222,33 +222,43 @@ def exibir_total_de_pontos_de_parada():
 def exibir_tipo_de_pessoa():
     print("Exibir tipo de pessoas")
     for aluno in alunos:
-        print("Nome: " + aluno.nome_oficial)
+        print("Nome do aluno: " + aluno.nome_oficial)
         print("Tipo: " + aluno.verificarTipo())
-        print("CPF ou CNPJ:" + aluno.cpf_cnpj)
+        print("CPF ou CNPJ:" + aluno._cpf_cnpj)
     for motorista in motoristas:
-        print("Nome: " + motorista.nome_oficial)
+        print("Nome do motorista: " + motorista.nome_oficial)
         print("Tipo: " + motorista.verificarTipo())
-        print("CPF ou CNPJ:" + motorista.cpf_cnpj)
+        print("CPF ou CNPJ:" + motorista._cpf_cnpj)
     for escola in escolas:
-        print("Nome: " + escola.nome_oficial)
+        print("Nome da escola: " + escola.nome_oficial)
         print("Tipo: " + escola.verificarTipo())
-        print("CPF ou CNPJ:" + escola.cpf_cnpj)
+        print("CPF ou CNPJ:" + escola._cpf_cnpj)
 
 def exibir_informacoes_detalhadas():
     print("\nExibir informações detalhadas")
+    for endereco in enderecos:
+        print("Endereço: ")
+        print(endereco.exibirDados())
     for aluno in alunos:
+        print("Aluno: ")
         print(aluno.exibirDados())
     for motorista in motoristas:
+        print("Motorista: ")
         print(motorista.exibirDados())
     for escola in escolas:
+        print("Escola: ")
         print(escola.exibirDados())
     for fornecedor in fornecedores:
+        print("Fornecedor: ")
         print(fornecedor.exibirDados())
     for veiculo in veiculos:
+        print("Veículo: ")
         print(veiculo.exibirDados())
     for pontoDeParada in pontosDeParada:
+        print("Ponto de Parada: ")
         print(pontoDeParada.exibirDados())
     for contrato in contratos:
+        print("Contrato: ")
         print(contrato.exibirDados())
 
 
